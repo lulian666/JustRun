@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		BB196281230537EB00A71030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB196280230537EB00A71030 /* AppDelegate.swift */; };
 		BB196283230537EB00A71030 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB196282230537EB00A71030 /* ViewController.swift */; };
-		BB196286230537EB00A71030 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB196284230537EB00A71030 /* Main.storyboard */; };
 		BB196288230537EC00A71030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB196287230537EC00A71030 /* Assets.xcassets */; };
 		BB19628B230537EC00A71030 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB196289230537EC00A71030 /* LaunchScreen.storyboard */; };
 		BB196296230537EC00A71030 /* JustRunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB196295230537EC00A71030 /* JustRunUITests.swift */; };
+		BB1962A12305596500A71030 /* RunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1962A02305596500A71030 /* RunningViewController.swift */; };
+		BB1962A32305794B00A71030 /* CountDownTimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1962A22305794B00A71030 /* CountDownTimerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +30,14 @@
 		BB19627D230537EB00A71030 /* JustRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB196280230537EB00A71030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB196282230537EB00A71030 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BB196285230537EB00A71030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB196287230537EC00A71030 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB19628A230537EC00A71030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB19628C230537EC00A71030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB196291230537EC00A71030 /* JustRunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustRunUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB196295230537EC00A71030 /* JustRunUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustRunUITests.swift; sourceTree = "<group>"; };
 		BB196297230537EC00A71030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB1962A02305596500A71030 /* RunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningViewController.swift; sourceTree = "<group>"; };
+		BB1962A22305794B00A71030 /* CountDownTimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +81,11 @@
 			children = (
 				BB196280230537EB00A71030 /* AppDelegate.swift */,
 				BB196282230537EB00A71030 /* ViewController.swift */,
-				BB196284230537EB00A71030 /* Main.storyboard */,
 				BB196287230537EC00A71030 /* Assets.xcassets */,
 				BB196289230537EC00A71030 /* LaunchScreen.storyboard */,
 				BB19628C230537EC00A71030 /* Info.plist */,
+				BB1962A02305596500A71030 /* RunningViewController.swift */,
+				BB1962A22305794B00A71030 /* CountDownTimerController.swift */,
 			);
 			path = JustRun;
 			sourceTree = "<group>";
@@ -179,7 +182,6 @@
 			files = (
 				BB19628B230537EC00A71030 /* LaunchScreen.storyboard in Resources */,
 				BB196288230537EC00A71030 /* Assets.xcassets in Resources */,
-				BB196286230537EB00A71030 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +200,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB196283230537EB00A71030 /* ViewController.swift in Sources */,
+				BB1962A12305596500A71030 /* RunningViewController.swift in Sources */,
 				BB196281230537EB00A71030 /* AppDelegate.swift in Sources */,
+				BB1962A32305794B00A71030 /* CountDownTimerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +225,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BB196284230537EB00A71030 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BB196285230537EB00A71030 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BB196289230537EC00A71030 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -363,6 +359,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LSG96244ZQ;
 				INFOPLIST_FILE = JustRun/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,6 +378,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LSG96244ZQ;
 				INFOPLIST_FILE = JustRun/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
