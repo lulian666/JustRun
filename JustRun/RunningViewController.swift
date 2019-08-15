@@ -14,10 +14,11 @@ class RunningViewController: UIViewController {
     var timer: Timer!
     var time1: Int = Int(ViewController.time1) ?? 60
     var time2: Int = Int(ViewController.time2) ?? 30
-    var speed1 = ViewController.speed1 ?? "6.5"
-    var speed2 = ViewController.speed2 ?? "8.5"
+    var speed1 = ViewController.speed1
+    var speed2 = ViewController.speed2
     var isSpeed1 = true
     var leftTime:Int = 1
+    var speedLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +40,8 @@ class RunningViewController: UIViewController {
         endButton.addTarget(self, action: #selector(stopCounting), for: UIControl.Event.touchUpInside)
         self.view.addSubview(endButton)
         
-        let speedLabel = UILabel(frame: CGRect(x: 130, y: 100, width: 150, height: 50))
-        speedLabel.text = "目前速度：\(isSpeed1 ? time1 : time2)"
+        speedLabel = UILabel(frame: CGRect(x: 130, y: 100, width: 150, height: 50))
+        speedLabel.text = "目前速度：\(isSpeed1 ? speed1 : speed2)"
         speedLabel.textColor =  UIColor.black
         self.view.addSubview(speedLabel)
     }
@@ -67,6 +68,7 @@ class RunningViewController: UIViewController {
             self.startCountingButton.isEnabled = true
             isSpeed1 = !isSpeed1
             leftTime = isSpeed1 ? time1 : time2
+            speedLabel.text = "目前速度：\(isSpeed1 ? speed1 : speed2)"
 //            startCountingButton.setTitle("重新开始计时3(\(leftTime)s)", for: .normal)
         }
     }
