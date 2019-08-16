@@ -7,7 +7,6 @@
 //
 import UIKit
 
-
 class CountDownTimerController: UIViewController{
     var btn : UIButton!
     var leftTime:Int = 60
@@ -23,9 +22,7 @@ class CountDownTimerController: UIViewController{
         btn.clipsToBounds = true
         btn.layer.cornerRadius = 5.0
         btn.addTarget(self, action: #selector(startClicked), for: .touchUpInside)
-        
         self.view.addSubview(btn)
-        
     }
     @objc func startClicked() {
         leftTime = 60
@@ -33,7 +30,6 @@ class CountDownTimerController: UIViewController{
         self.btn.isEnabled = false
         //获取该计时器的剩余时间
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(1), target: self, selector: #selector(tickDown), userInfo: nil, repeats: true)
-        
     }
 
     @objc func tickDown() {
@@ -53,7 +49,6 @@ class CountDownTimerController: UIViewController{
             alter.message = "时间到"
             alter.addButton(withTitle: "确定")
             alter.show()
-            
         }
     }
 }
