@@ -11,49 +11,68 @@ import UIKit
 class ViewController: UIViewController{
     public static var speed1: String = "6.5"
     public static var speed2: String = "8.5"
-    public static var time1: String = "6"
-    public static var time2: String = "3"
+    public static var speed1Time1: String = "10"
+    public static var speed2Time1: String = "10"
+    public static var speed1Time2: String = "10"
+    public static var speed2Time2: String = "10"
     
     weak var textFieldSpeed1: UITextField!
     weak var textFieldSpeed2: UITextField!
-    weak var textFieldTime1: UITextField!
-    weak var textFieldTime2: UITextField!
+    weak var textFieldSpeed1Time1: UITextField!
+    weak var textFieldSpeed2Time1: UITextField!
+    weak var textFieldSpeed1Time2: UITextField!
+    weak var textFieldSpeed2Time2: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
-        let labelSpeed1 = UILabel(frame: CGRect(x: 80, y: 200, width: 100, height: 50))
-        labelSpeed1.text = "速度1:"
+        let labelSpeed1 = UILabel(frame: CGRect(x: 10, y: 50, width: 100, height: 50))
+        labelSpeed1.text = "慢跑速度:"
         self.view.addSubview(labelSpeed1)
  
-        textFieldSpeed1 = self.createTextField(x: 180, y: 200, width: 150, height: 50, tag: 1, placeholder: "输入慢跑速度")
+        textFieldSpeed1 = self.createTextField(x: 160, y: 50, width: 190, height: 50, tag: 1, placeholder: "慢跑速度默认6.5km/h")
         self.view.addSubview(textFieldSpeed1)
         
-        let labelTime1 = UILabel(frame: CGRect(x: 80, y: 300, width: 100, height: 50))
-        labelTime1.text = "单次时长:"
+        let labelTime1 = UILabel(frame: CGRect(x: 10, y: 170, width: 150, height: 50))
+        labelTime1.text = "慢跑循环时长1:"
         self.view.addSubview(labelTime1)
         
-        textFieldTime1 = self.createTextField(x: 180, y: 300, width: 150, height: 50, tag: 2, placeholder: "输入慢跑时间")
-        self.view.addSubview(textFieldTime1)
+        textFieldSpeed1Time1 = self.createTextField(x: 160, y: 170, width: 190, height: 50, tag: 3, placeholder: "输入慢跑时间1")
+        self.view.addSubview(textFieldSpeed1Time1)
 //        textFieldTime1.addTarget(self, action: #selector(fieldLoseFoucus), for: UIControl.Event.touchUpOutside)
         
-        let labelSpeed2 = UILabel(frame: CGRect(x: 80, y: 400, width: 100, height: 50))
-        labelSpeed2.text = "速度2:"
+        let labelSpeed2 = UILabel(frame: CGRect(x: 10, y: 110, width: 100, height: 50))
+        labelSpeed2.text = "快跑速度:"
         self.view.addSubview(labelSpeed2)
         
-        textFieldSpeed2 = self.createTextField(x: 180, y: 400, width: 150, height: 50, tag: 3, placeholder: "输入慢跑速度")
+        textFieldSpeed2 = self.createTextField(x: 160, y: 110, width: 190, height: 50, tag: 2, placeholder: "快跑速度默认8.5km/h")
         self.view.addSubview(textFieldSpeed2)
         
-        let labelTime2 = UILabel(frame: CGRect(x: 80, y: 500, width: 100, height: 50))
-        labelTime2.text = "单次时长:"
+        let labelTime2 = UILabel(frame: CGRect(x: 10, y: 230, width: 150, height: 50))
+        labelTime2.text = "快跑循环时长1:"
         self.view.addSubview(labelTime2)
         
-        textFieldTime2 = self.createTextField(x: 180, y: 500, width: 150, height: 50, tag: 4, placeholder: "输入快跑时间")
-        self.view.addSubview(textFieldTime2)
+        textFieldSpeed2Time1 = self.createTextField(x: 160, y: 230, width: 190, height: 50, tag: 4, placeholder: "输入快跑时间1")
+        self.view.addSubview(textFieldSpeed2Time1)
 //        textFieldTime2.addTarget(self, action: #selector(fieldLoseFoucus), for: UIControl.Event.editingDidEnd)
         
-        let startButton = UIButton(frame: CGRect(x: 130, y: 650, width: 150, height: 100))
+        let labelTime12 = UILabel(frame: CGRect(x: 10, y: 290, width: 150, height: 50))
+        labelTime12.text = "慢跑循环时长2:"
+        self.view.addSubview(labelTime12)
+        
+        textFieldSpeed1Time2 = self.createTextField(x: 160, y: 290, width: 190, height: 50, tag: 5, placeholder: "输入慢跑时间2")
+        self.view.addSubview(textFieldSpeed1Time2)
+        
+        let labelTime22 = UILabel(frame: CGRect(x: 10, y: 350, width: 150, height: 50))
+        labelTime22.text = "快跑循环时长2:"
+        self.view.addSubview(labelTime22)
+        
+        textFieldSpeed2Time2 = self.createTextField(x: 160, y: 350, width: 190, height: 50, tag: 6, placeholder: "输入快跑时间2")
+        self.view.addSubview(textFieldSpeed2Time2)
+        
+        
+        let startButton = UIButton(frame: CGRect(x: 110, y: 450, width: 150, height: 100))
         startButton.backgroundColor = UIColor.red
         startButton.setTitle("设置好了", for: UIControl.State.normal)
         self.view.addSubview(startButton)
@@ -90,11 +109,15 @@ class ViewController: UIViewController{
         case 1:
             ViewController.speed1 = textFieldSpeed1.text ?? "6.5"
         case 2:
-            ViewController.time1 = textFieldTime1.text ?? "6"
+            ViewController.speed2 = textFieldSpeed1Time1.text ?? "8.5"
         case 3:
-            ViewController.speed2 = textFieldSpeed2.text ?? "8.5"
+            ViewController.speed1Time1 = textFieldSpeed1Time1.text ?? "10"
         case 4:
-            ViewController.time2 = textFieldTime2.text ?? "3"
+            ViewController.speed2Time1 = textFieldSpeed2Time1.text ?? "10"
+        case 5:
+            ViewController.speed1Time2 = textFieldSpeed1Time2.text ?? "10"
+        case 6:
+            ViewController.speed2Time2 = textFieldSpeed2Time2.text ?? "10"
         default:
             break
         }
@@ -111,13 +134,21 @@ extension ViewController: UITextFieldDelegate {
         let tag = textField.tag
         switch tag {
         case 1:
-            textFieldTime1.becomeFirstResponder()
-        case 2:
             textFieldSpeed2.becomeFirstResponder()
+        case 2:
+            textFieldSpeed1Time1.becomeFirstResponder()
         case 3:
-            textFieldTime2.becomeFirstResponder()
+            textFieldSpeed2Time1.becomeFirstResponder()
+        case 4:
+            textFieldSpeed1Time2.becomeFirstResponder()
+        case 5:
+            textFieldSpeed2Time2.becomeFirstResponder()
+        case 6:
+            textFieldSpeed2Time2.resignFirstResponder()
+            let runningView = RunningViewController()
+            self.present(runningView, animated: true, completion: nil)
         default:
-            textFieldTime2.resignFirstResponder()
+            break
         }
         return true
     }
