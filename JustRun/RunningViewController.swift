@@ -39,7 +39,7 @@ class RunningViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startCountingButton = UIButton.init(type: .system)
-        startCountingButton.frame = CGRect.init(x: 100, y: 300, width: 200, height: 200)
+        startCountingButton.frame = CGRect.init(x: 8, y: 300, width: 400, height: 200)
         startCountingButton.setTitleColor(UIColor.red, for: .normal)
         startCountingButton.setTitleColor(UIColor.red, for: .disabled)
         startCountingButton.backgroundColor = UIColor.green
@@ -59,32 +59,18 @@ class RunningViewController: UIViewController {
         endButton.addTarget(self, action: #selector(stopCounting), for: UIControl.Event.touchUpInside)
         self.view.addSubview(endButton)
         
-//        speedLabel = UILabel(frame: CGRect(x: 75, y: 20, width: 300, height: 50))
-//        speedLabel.text = "目前速度：\(isSpeed1 ? speed1 : speed2)km/h"
-//        speedLabel.font = UIFont.systemFont(ofSize: 30)
-//        speedLabel.textColor =  UIColor.black
-//        self.view.addSubview(speedLabel)
         speedLabel = self.createLabel(x: 75, y: 20, width: 300, height: 50, text: "目前速度：\(isSpeed1 ? speed1 : speed2)km/h", size: 30, color: .black)
         self.view.addSubview(speedLabel)
         
-        timeLabel = UILabel(frame: CGRect(x: 75, y: 80, width: 300, height: 50))
         currentTime = speed1Time1
-        timeLabel.text = "持续时间：\(currentTime)s"
-        timeLabel.font = UIFont.systemFont(ofSize: 30)
-        timeLabel.textColor =  UIColor.black
+        timeLabel = self.createLabel(x: 75, y: 80, width: 300, height: 50, text: "持续时间：\(currentTime)s", size: 30, color: .black)
         self.view.addSubview(timeLabel)
         
-        nextSpeedLabel = UILabel(frame: CGRect(x: 75, y: 140, width: 300, height: 50))
-        nextSpeedLabel.text = "下个速度：\(isSpeed1 ? speed2 : speed1)km/h"
-        nextSpeedLabel.font = UIFont.systemFont(ofSize: 30)
-        nextSpeedLabel.textColor =  UIColor.darkGray
+        nextSpeedLabel = self.createLabel(x: 75, y: 140, width: 300, height: 50, text: "下个速度：\(isSpeed1 ? speed2 : speed1)km/h", size: 30, color: .darkGray)
         self.view.addSubview(nextSpeedLabel)
         
-        nextTimeLabel = UILabel(frame: CGRect(x: 75, y: 200, width: 300, height: 50))
         leftTime = speed2Time1
-        nextTimeLabel.text = "下个时间：\(leftTime)s"
-        nextTimeLabel.font = UIFont.systemFont(ofSize: 30)
-        nextTimeLabel.textColor =  UIColor.darkGray
+        nextTimeLabel = self.createLabel(x: 75, y: 200, width: 300, height: 50, text: "下个时间：\(leftTime)s", size: 30, color: .darkGray)
         self.view.addSubview(nextTimeLabel)
     }
     
@@ -98,7 +84,11 @@ class RunningViewController: UIViewController {
     
     @objc func tickDown() {
         //修改剩余时间
-        startCountingButton.setTitle("(\(leftTime)s)", for: .normal)
+        if (leftTime > 1){
+            startCountingButton.setTitle("\(leftTime)s", for: .normal)
+        }else if (leftTime == 1){
+            startCountingButton.setTitle("调速到\(isSpeed1 ? speed2 : speed1)km/h吧", for: .normal)
+        }
         //将剩余时间减少1秒
         leftTime -= 1
         speedLabel.text = "目前速度：\(isSpeed1 ? speed1 : speed2)km/h"
@@ -159,10 +149,10 @@ class RunningViewController: UIViewController {
     }
     
     func createLabel(x: Int, y: Int, width: Int, height: Int, text: String, size: Int, color: UIColor ) -> UILabel {
-        let label = UILabel(frame: CGRect(x: 75, y: 20, width: 300, height: 50))
-        label.text = "目前速度：\(isSpeed1 ? speed1 : speed2)km/h"
-        label.font = UIFont.systemFont(ofSize: 30)
-        label.textColor =  UIColor.black
+        let label = UILabel(frame: CGRect(x: x, y: y, width: width, height: height))
+        label.text = text
+        label.font = UIFont.systemFont(ofSize: CGFloat(size))
+        label.textColor =  color
         return label
     }
 }
