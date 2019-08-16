@@ -13,7 +13,6 @@
 		BB19628B230537EC00A71030 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB196289230537EC00A71030 /* LaunchScreen.storyboard */; };
 		BB196296230537EC00A71030 /* JustRunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB196295230537EC00A71030 /* JustRunUITests.swift */; };
 		BB1962A12305596500A71030 /* RunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1962A02305596500A71030 /* RunningViewController.swift */; };
-		BB1962A32305794B00A71030 /* CountDownTimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1962A22305794B00A71030 /* CountDownTimerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +36,6 @@
 		BB196295230537EC00A71030 /* JustRunUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustRunUITests.swift; sourceTree = "<group>"; };
 		BB196297230537EC00A71030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB1962A02305596500A71030 /* RunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningViewController.swift; sourceTree = "<group>"; };
-		BB1962A22305794B00A71030 /* CountDownTimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +83,6 @@
 				BB196289230537EC00A71030 /* LaunchScreen.storyboard */,
 				BB19628C230537EC00A71030 /* Info.plist */,
 				BB1962A02305596500A71030 /* RunningViewController.swift */,
-				BB1962A22305794B00A71030 /* CountDownTimerController.swift */,
 			);
 			path = JustRun;
 			sourceTree = "<group>";
@@ -202,7 +199,6 @@
 				BB196283230537EB00A71030 /* ViewController.swift in Sources */,
 				BB1962A12305596500A71030 /* RunningViewController.swift in Sources */,
 				BB196281230537EB00A71030 /* AppDelegate.swift in Sources */,
-				BB1962A32305794B00A71030 /* CountDownTimerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

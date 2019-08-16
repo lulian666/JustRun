@@ -40,7 +40,6 @@ class ViewController: UIViewController{
         
         textFieldSpeed1Time1 = self.createTextField(x: 160, y: 170, width: 190, height: 50, tag: 3, placeholder: "输入慢跑时间1")
         self.view.addSubview(textFieldSpeed1Time1)
-//        textFieldTime1.addTarget(self, action: #selector(fieldLoseFoucus), for: UIControl.Event.touchUpOutside)
         
         let labelSpeed2 = UILabel(frame: CGRect(x: 10, y: 110, width: 100, height: 50))
         labelSpeed2.text = "快跑速度:"
@@ -81,14 +80,8 @@ class ViewController: UIViewController{
     
     @objc func btnClickFun(sender: UIButton?){
         let runningView = RunningViewController()
-//        let view = CountDownTimerController()
         self.present(runningView, animated: true, completion: nil)
     }
-    
-//     @objc func fieldLoseFoucus(sender: UITextField?){
-//        print("fieldLoseFoucus")
-//        sender?.resignFirstResponder();
-//    }
     
     func createTextField(x: Int, y: Int, width: Int, height: Int, tag: Int, placeholder: String) -> UITextField {
         let textField = UITextField(frame: CGRect(x: x, y: y, width: width, height: height))
@@ -109,7 +102,7 @@ class ViewController: UIViewController{
         case 1:
             ViewController.speed1 = textFieldSpeed1.text ?? "6.5"
         case 2:
-            ViewController.speed2 = textFieldSpeed1Time1.text ?? "8.5"
+            ViewController.speed2 = textFieldSpeed2.text ?? "8.5"
         case 3:
             ViewController.speed1Time1 = textFieldSpeed1Time1.text ?? "10"
         case 4:

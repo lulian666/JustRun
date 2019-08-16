@@ -59,14 +59,14 @@ class RunningViewController: UIViewController {
         endButton.addTarget(self, action: #selector(stopCounting), for: UIControl.Event.touchUpInside)
         self.view.addSubview(endButton)
         
-        speedLabel = self.createLabel(x: 75, y: 20, width: 300, height: 50, text: "目前速度：\(isSpeed1 ? speed1 : speed2)km/h", size: 30, color: .black)
+        speedLabel = self.createLabel(x: 75, y: 20, width: 300, height: 50, text: "目前速度：\(speed1)km/h", size: 30, color: .black)
         self.view.addSubview(speedLabel)
         
         currentTime = speed1Time1
         timeLabel = self.createLabel(x: 75, y: 80, width: 300, height: 50, text: "持续时间：\(currentTime)s", size: 30, color: .black)
         self.view.addSubview(timeLabel)
         
-        nextSpeedLabel = self.createLabel(x: 75, y: 140, width: 300, height: 50, text: "下个速度：\(isSpeed1 ? speed2 : speed1)km/h", size: 30, color: .darkGray)
+        nextSpeedLabel = self.createLabel(x: 75, y: 140, width: 300, height: 50, text: "下个速度：\(speed2)km/h", size: 30, color: .darkGray)
         self.view.addSubview(nextSpeedLabel)
         
         leftTime = speed2Time1
