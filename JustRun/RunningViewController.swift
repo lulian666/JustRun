@@ -40,6 +40,7 @@ class RunningViewController: UIViewController {
         super.viewDidLoad()
         startCountingButton = UIButton.init(type: .system)
         startCountingButton.frame = CGRect.init(x: 8, y: 300, width: 400, height: 200)
+//        startCountingButton.frame = CGRect.init
         startCountingButton.setTitleColor(UIColor.red, for: .normal)
         startCountingButton.setTitleColor(UIColor.red, for: .disabled)
         startCountingButton.backgroundColor = UIColor.green
@@ -52,7 +53,8 @@ class RunningViewController: UIViewController {
         self.view.addSubview(startCountingButton)
         self.view.backgroundColor = UIColor.lightGray
      
-        endButton = UIButton(frame: CGRect(x: 130, y: 650, width: 150, height: 100))
+//        endButton = UIButton(frame: CGRect(x: 130, y: 650, width: 150, height: 100))
+        endButton = UIButton(frame: CGRect(x: (UIScreen.main.bounds.width - 150)/2, y: (UIScreen.main.bounds.height)/2 + 150, width: 150, height: 100))
         endButton.setTitle("结束跑步", for: .normal)
         endButton.setTitleColor(UIColor.green, for: .normal)
         endButton.backgroundColor = UIColor.red
