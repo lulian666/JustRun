@@ -12,10 +12,10 @@ class RunningViewController: UIViewController {
     var endButton: UIButton!
     var startCountingButton: UIButton!
     var timer: Timer!
-    var speed1Time1: Int = Int(ViewController.speed1Time1) ?? 10
-    var speed2Time1: Int = Int(ViewController.speed2Time1) ?? 10
-    var speed1Time2: Int = Int(ViewController.speed1Time2) ?? 10
-    var speed2Time2: Int = Int(ViewController.speed2Time2) ?? 10
+    var speed1Time1: Int = Int(ViewController.speed1Time1) ?? 60
+    var speed2Time1: Int = Int(ViewController.speed2Time1) ?? 30
+    var speed1Time2: Int = Int(ViewController.speed1Time2) ?? 60
+    var speed2Time2: Int = Int(ViewController.speed2Time2) ?? 30
     var speed1 = ViewController.speed1
     var speed2 = ViewController.speed2
     var isSpeed1 = true

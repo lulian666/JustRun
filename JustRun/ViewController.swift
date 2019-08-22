@@ -7,15 +7,15 @@
 //
 
 import UIKit
-import SnapKit
+
 
 class ViewController: UIViewController{
     public static var speed1: String = "6.5"
     public static var speed2: String = "8.5"
-    public static var speed1Time1: String = "10"
-    public static var speed2Time1: String = "10"
-    public static var speed1Time2: String = "10"
-    public static var speed2Time2: String = "10"
+    public static var speed1Time1: String = "60"
+    public static var speed2Time1: String = "30"
+    public static var speed1Time2: String = "60"
+    public static var speed2Time2: String = "30"
     
     weak var textFieldSpeed1: UITextField!
     weak var textFieldSpeed2: UITextField!
@@ -105,13 +105,13 @@ class ViewController: UIViewController{
         case 2:
             ViewController.speed2 = textFieldSpeed2.text ?? "8.5"
         case 3:
-            ViewController.speed1Time1 = textFieldSpeed1Time1.text ?? "10"
+            ViewController.speed1Time1 = textFieldSpeed1Time1.text ?? "60"
         case 4:
-            ViewController.speed2Time1 = textFieldSpeed2Time1.text ?? "10"
+            ViewController.speed2Time1 = textFieldSpeed2Time1.text ?? "30"
         case 5:
-            ViewController.speed1Time2 = textFieldSpeed1Time2.text ?? "10"
+            ViewController.speed1Time2 = textFieldSpeed1Time2.text ?? "60"
         case 6:
-            ViewController.speed2Time2 = textFieldSpeed2Time2.text ?? "10"
+            ViewController.speed2Time2 = textFieldSpeed2Time2.text ?? "30"
         default:
             break
         }
